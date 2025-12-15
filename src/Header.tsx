@@ -1,44 +1,99 @@
+import { useState, useEffect } from 'react';
+
 function Header() {
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [hasAnimated, setHasAnimated] = useState(false);
+
+    useEffect(() => {
+        // Trigger animation on mount
+        setTimeout(() => setHasAnimated(true), 100);
+
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <header className="bg-white border-b border-neutral-200 sticky top-0 z-50">
+        <header
+            className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+                isScrolled
+                    ? 'bg-hero-accent border-b border-neutral-200 shadow-sm'
+                    : 'bg-transparent'
+            } ${
+                hasAnimated ? 'top-0 opacity-100' : '-top-24 opacity-0'
+            }`}
+            style={{ transition: 'top 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s, border 0.3s, box-shadow 0.3s' }}
+        >
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16">
-                    {/* Logo */}
-                    <div className="flex items-center">
-                        <h1 className="text-xl font-bold text-brand-500">
+                <div className={`flex items-center transition-all duration-300 ${
+                    isScrolled ? 'h-16 justify-between' : 'h-20 justify-between'
+                }`}>
+                    {/* Logo - Left */}
+                    <div className={`flex items-center flex-shrink-0 transition-all duration-300 ${
+                        !isScrolled ? 'bg-hero-accent px-6 py-3 rounded-2xl' : ''
+                    }`}>
+                        <h1 className={`font-bold transition-all duration-300 ${
+                            isScrolled ? 'text-2xl text-hero-bg-light' : 'text-xl text-hero-bg-dark'
+                        }`}>
                             Thrive
                         </h1>
                     </div>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-8">
+                    {/* Desktop Navigation - Center */}
+                    <div className={`hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2 transition-all duration-300 ${
+                        !isScrolled ? 'bg-hero-accent px-8 py-3 rounded-2xl' : ''
+                    }`}>
                         <a
                             href="#about"
-                            className="text-neutral-600 hover:text-neutral-900 transition-colors text-sm font-medium"
+                            className={`transition-colors text-sm font-medium ${
+                                isScrolled
+                                    ? 'text-hero-bg-dark hover:text-neutral-900'
+                                    : 'text-hero-bg-dark hover:text-hero-bg-light'
+                            }`}
                         >
                             About
                         </a>
                         <a
                             href="#how-it-works"
-                            className="text-neutral-600 hover:text-neutral-900 transition-colors text-sm font-medium"
+                            className={`transition-colors text-sm font-medium ${
+                                isScrolled
+                                    ? 'text-hero-bg-dark hover:text-neutral-900'
+                                    : 'text-hero-bg-dark hover:text-hero-bg-light'
+                            }`}
                         >
                             How It Works
                         </a>
                         <a
-                            href="#contact"
-                            className="bg-brand-500 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-brand-600 transition-colors"
+                            href="#faq"
+                            className={`transition-colors text-sm font-medium ${
+                                isScrolled
+                                    ? 'text-hero-bg-dark hover:text-neutral-900'
+                                    : 'text-hero-bg-dark hover:text-hero-bg-light'
+                            }`}
                         >
-                            Book a Demo
+                            FAQ
                         </a>
                     </div>
 
-                    {/* Mobile CTA */}
-                    <div className="md:hidden">
+                    {/* CTA Button - Right */}
+                    <div className="flex items-center flex-shrink-0">
                         <a
                             href="#contact"
-                            className="bg-brand-500 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-brand-600 transition-colors"
+                            className={`px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                                isScrolled
+                                    ? 'bg-hero-bg-dark text-white hover:bg-hero-bg-light'
+                                    : 'bg-hero-accent text-bg-hero-dark hover:bg-hero-bg-light shadow-md'
+                            }`}
                         >
-                            Book Demo
+                            <span className="hidden sm:inline">Book a Demo</span>
+                            <span className="sm:hidden">Book Demo</span>
                         </a>
                     </div>
                 </div>
