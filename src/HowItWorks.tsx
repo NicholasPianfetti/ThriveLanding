@@ -100,10 +100,10 @@ function HowItWorks() {
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}>
                     <a
-                        href="#contact"
+                        href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=e8dcc4&primary_color=1a2f23"
                         className="inline-block bg-hero-bg-dark text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-hero-bg-light hover:shadow-lg hover:shadow-hero-bg-dark/25 transition-all duration-200"
                     >
-                        Start Your Project
+                        Book a Demo
                     </a>
                 </div>
             </div>

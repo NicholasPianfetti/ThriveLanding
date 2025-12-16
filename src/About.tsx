@@ -14,7 +14,7 @@ function About() {
                         Why Choose Thrive
                     </h2>
                     <p className="text-xl text-neutral-600 leading-relaxed font-light">
-                        We develop custom AI automation tools that solve your specific business challenges. No generic solutions, just intelligent systems designed around your workflows.
+                        We develop custom AI automation tools that solve your specific business challenges.
                     </p>
                 </div>
 
@@ -35,7 +35,7 @@ function About() {
                             </div>
                             <h3 className="text-2xl font-bold text-neutral-900 mb-4">Custom Built</h3>
                             <p className="text-neutral-600 leading-relaxed">
-                                Every solution is tailored to your unique business requirements and processes. We don't believe in one-size-fits-all.
+                                Every solution is tailored to your unique business requirements and processes.
                             </p>
                         </div>
                     </div>

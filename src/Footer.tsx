@@ -5,10 +5,10 @@ function Footer() {
                 {/* Newsletter section */}
                 <div className="py-16 border-b border-neutral-800">
                     <div className="max-w-2xl mx-auto text-center">
-                        <h3 className="text-2xl font-bold text-white mb-4">
+                        <h3 className="text-2xl font-bold text-white mb-2">
                             Stay Updated
                         </h3>
-                        <p className="text-neutral-400 mb-8 text-md">
+                        <p className="text-neutral-400 mb-4 text-md">
                             Get the latest insights on AI automation and business optimization delivered to your inbox.
                         </p>
                         <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -29,13 +29,13 @@ function Footer() {
 
                 {/* Main footer content */}
                 <div className="py-12">
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-6">
                         {/* Brand */}
                         <div className="lg:col-span-2">
-                            <h3 className="text-2xl font-bold text-white mb-4">
+                            <h3 className="text-2xl font-bold text-white mb-2">
                                 Thrive
                             </h3>
-                            <p className="text-neutral-400 leading-relaxed mb-6 max-w-sm">
+                            <p className="text-neutral-400 leading-relaxed mb-2 max-w-sm">
                                 Custom AI automation solutions built for your business. We help companies streamline operations and accelerate growth through intelligent automation.
                             </p>
                             <div className="flex gap-3">
@@ -71,7 +71,7 @@ function Footer() {
 
                         {/* Product */}
                         <div>
-                            <h4 className="font-semibold text-white mb-4">Product</h4>
+                            <h4 className="font-semibold text-white mb-2">Product</h4>
                             <ul className="space-y-3">
                                 <li>
                                     <a href="#about" className="text-neutral-400 hover:text-white transition-colors">
@@ -97,7 +97,7 @@ function Footer() {
                         </div>
 
                         {/* Company */}
-                        <div>
+                        {/* <div>
                             <h4 className="font-semibold text-white mb-4">Company</h4>
                             <ul className="space-y-3">
                                 <li>
@@ -121,10 +121,10 @@ function Footer() {
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> */}
 
                         {/* Resources */}
-                        <div>
+                        {/* <div>
                             <h4 className="font-semibold text-white mb-4">Resources</h4>
                             <ul className="space-y-3">
                                 <li>
@@ -148,11 +148,11 @@ function Footer() {
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Bottom bar */}
-                    <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    {/* <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="text-neutral-500 text-sm">
                             &copy; {new Date().getFullYear()} Thrive. All rights reserved.
                         </p>
@@ -167,7 +167,7 @@ function Footer() {
                                 Security
                             </a>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </footer>

@@ -1,5 +1,13 @@
 import { useState, useEffect } from 'react';
 
+declare global {
+    interface Window {
+        Calendly?: {
+            initBadgeWidget: (config: any) => void;
+        };
+    }
+}
+
 function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [hasAnimated, setHasAnimated] = useState(false);
@@ -19,6 +27,23 @@ function Header() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    useEffect(() => {
+    // Load Calendly script
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.head.appendChild(script);
+    }, []);
+
+    // Also load the Calendly CSS
+    useEffect(() => {
+        const link = document.createElement('link');
+        link.href = 'https://assets.calendly.com/assets/external/widget.css';
+        link.rel = 'stylesheet';
+        document.head.appendChild(link);
+    }, []);
+
 
     return (
         <header
@@ -85,7 +110,7 @@ function Header() {
                     {/* CTA Button - Right */}
                     <div className="flex items-center flex-shrink-0">
                         <a
-                            href="#contact"
+                            href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=e8dcc4&primary_color=1a2f23"
                             className={`px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
                                 isScrolled
                                     ? 'bg-hero-bg-dark text-white hover:bg-hero-bg-light'

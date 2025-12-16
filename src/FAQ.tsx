@@ -8,11 +8,11 @@ function FAQ() {
     const faqs = [
         {
             question: "What types of businesses do you work with?",
-            answer: "We work with businesses of all sizes across various industries. Whether you're a startup looking to automate your first process or an enterprise seeking to scale your AI capabilities, we can help. Our solutions are particularly effective for companies with repetitive workflows, customer service operations, data processing needs, or complex business logic that can benefit from intelligent automation.",
+            answer: "We work with businesses of all sizes across various industries. Whether you're a startup looking to automate your first process or an enterprise seeking to scale your AI capabilities, we can help.",
         },
         {
             question: "How long does it typically take to build a custom solution?",
-            answer: "Project timelines vary based on complexity and scope. A simple automation might take 2-4 weeks, while more complex systems can take 2-3 months. During our discovery call, we'll provide a detailed timeline specific to your needs. We work in iterative sprints, so you'll see progress and can provide feedback throughout the development process.",
+            answer: "Project timelines vary based on complexity and scope. A simple automation might take 2-4 weeks, while more complex systems can take 2-3 months. During our discovery call, we'll provide a detailed timeline specific to your needs.",
         },
         {
             question: "Do I need technical expertise to use your AI solutions?",
@@ -24,7 +24,7 @@ function FAQ() {
         },
         {
             question: "What kind of support do you provide after launch?",
-            answer: "We provide ongoing support and maintenance to ensure your solution continues to perform optimally. This includes monitoring, bug fixes, updates, and optimizations. We also offer training for new team members and can help scale your solution as your business grows. Our support packages are flexible and can be customized to match your needs.",
+            answer: "We provide ongoing support and maintenance to ensure your solution continues to perform optimally. We also offer training for new team members and can help scale your solution as your business grows. Our support packages are flexible and can be customized to match your needs.",
         },
         {
             question: "How do you price your services?",

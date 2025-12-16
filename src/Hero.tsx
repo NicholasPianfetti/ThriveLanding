@@ -51,7 +51,7 @@ function Hero() {
                         hasAnimated ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
                     }`}>
                         <a
-                            href="#contact"
+                            href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=e8dcc4&primary_color=1a2f23"
                             className="bg-hero-accent text-hero-bg-dark px-8 py-4 rounded-xl text-lg font-semibold hover:bg-hero-accent-dark hover:shadow-lg hover:shadow-hero-accent/25 transition-all duration-200 w-full sm:w-auto text-center"
                         >
                             Book a Demo
