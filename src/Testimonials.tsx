@@ -28,7 +28,7 @@ function Testimonials() {
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 tracking-tight">
                         What Our Clients Say
                     </h2>
-                    <p className="text-xl text-neutral-600 leading-relaxed font-light">
+                    <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed font-light">
                         Don't just take our word for it. Here's what our clients have to say about working with us.
                     </p>
                 </div>

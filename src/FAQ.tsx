@@ -39,10 +39,10 @@ function FAQ() {
                 <div className={`text-center mb-16 transition-all duration-700 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}>
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 tracking-tight">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 sm:mb-6 tracking-tight">
                         Frequently Asked Questions
                     </h2>
-                    <p className="text-xl text-neutral-600 leading-relaxed font-light">
+                    <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed font-light">
                         Everything you need to know about our custom AI automation services.
                     </p>
                 </div>
@@ -58,9 +58,9 @@ function FAQ() {
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="w-full flex items-center justify-between p-6 text-left hover:bg-neutral-50 transition-colors"
+                                className="w-full flex items-center justify-between p-4 sm:p-6 text-left hover:bg-neutral-50 transition-colors"
                             >
-                                <span className="text-lg font-semibold text-neutral-900 pr-8">
+                                <span className="text-base sm:text-lg font-semibold text-neutral-900 pr-6 sm:pr-8">
                                     {faq.question}
                                 </span>
                                 <svg
@@ -84,7 +84,7 @@ function FAQ() {
                                     openIndex === index ? 'max-h-96' : 'max-h-0'
                                 }`}
                             >
-                                <div className="px-6 pb-6 text-neutral-600 leading-relaxed">
+                                <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-sm sm:text-base text-neutral-600 leading-relaxed">
                                     {faq.answer}
                                 </div>
                             </div>

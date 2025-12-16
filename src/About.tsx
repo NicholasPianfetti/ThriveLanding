@@ -13,7 +13,7 @@ function About() {
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 tracking-tight">
                         Why Choose Thrive
                     </h2>
-                    <p className="text-xl text-neutral-600 leading-relaxed font-light">
+                    <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed font-light">
                         We develop custom AI automation tools that solve your specific business challenges.
                     </p>
                 </div>
@@ -33,7 +33,7 @@ function About() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                                 </svg>
                             </div>
-                            <h3 className="text-2xl font-bold text-neutral-900 mb-4">Custom Built</h3>
+                            <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Custom Built</h3>
                             <p className="text-neutral-600 leading-relaxed">
                                 Every solution is tailored to your unique business requirements and processes.
                             </p>
@@ -53,7 +53,7 @@ function About() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                 </svg>
                             </div>
-                            <h3 className="text-2xl font-bold text-neutral-900 mb-4">Seamless Integration</h3>
+                            <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Seamless Integration</h3>
                             <p className="text-neutral-600 leading-relaxed">
                                 Our tools integrate smoothly with your existing systems and workflows, minimizing disruption and maximizing efficiency.
                             </p>
@@ -73,7 +73,7 @@ function About() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
                                 </svg>
                             </div>
-                            <h3 className="text-2xl font-bold text-neutral-900 mb-4">Ongoing Support</h3>
+                            <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Ongoing Support</h3>
                             <p className="text-neutral-600 leading-relaxed">
                                 We provide continuous support and optimization as your needs evolve, ensuring long-term success.
                             </p>

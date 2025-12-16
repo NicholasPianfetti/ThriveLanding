@@ -62,10 +62,10 @@ function Header() {
                 }`}>
                     {/* Logo - Left */}
                     <div className={`flex items-center flex-shrink-0 transition-all duration-300 ${
-                        !isScrolled ? 'bg-hero-accent px-6 py-3 rounded-2xl' : ''
+                        !isScrolled ? 'bg-hero-accent px-4 sm:px-6 py-2 sm:py-3 rounded-2xl' : ''
                     }`}>
                         <h1 className={`font-bold transition-all duration-300 ${
-                            isScrolled ? 'text-2xl text-hero-bg-light' : 'text-xl text-hero-bg-dark'
+                            isScrolled ? 'text-xl sm:text-2xl text-hero-bg-light' : 'text-lg sm:text-xl text-hero-bg-dark'
                         }`}>
                             Thrive
                         </h1>
@@ -111,10 +111,10 @@ function Header() {
                     <div className="flex items-center flex-shrink-0">
                         <a
                             href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=e8dcc4&primary_color=1a2f23"
-                            className={`px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
                                 isScrolled
-                                    ? 'bg-hero-bg-dark text-white hover:bg-hero-bg-light'
-                                    : 'bg-hero-accent text-bg-hero-dark hover:bg-hero-bg-light shadow-md'
+                                    ? 'bg-hero-bg-dark text-hero-accent hover:bg-hero-bg-light'
+                                    : 'bg-hero-accent text-hero-bg-dark hover:bg-hero-bg-light shadow-md'
                             }`}
                         >
                             <span className="hidden sm:inline">Book a Demo</span>

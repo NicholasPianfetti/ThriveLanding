@@ -13,7 +13,7 @@ function HowItWorks() {
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 tracking-tight">
                         How It Works
                     </h2>
-                    <p className="text-xl text-neutral-600 leading-relaxed font-light">
+                    <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed font-light">
                         Our streamlined process takes you from idea to implementation in four simple steps.
                     </p>
                 </div>
@@ -31,7 +31,7 @@ function HowItWorks() {
                                     <div className="flex-shrink-0 w-12 h-12 bg-hero-bg-dark text-white rounded-xl flex items-center justify-center text-lg font-bold">
                                         1
                                     </div>
-                                    <h3 className="text-2xl font-bold text-neutral-900 mt-2">Discovery Call</h3>
+                                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mt-2">Discovery Call</h3>
                                 </div>
                                 <p className="text-neutral-600 leading-relaxed">
                                     We start with a conversation to understand your business challenges, workflows, and automation goals. This helps us identify the best opportunities for AI integration.
@@ -49,7 +49,7 @@ function HowItWorks() {
                                     <div className="flex-shrink-0 w-12 h-12 bg-hero-bg-dark text-white rounded-xl flex items-center justify-center text-lg font-bold">
                                         2
                                     </div>
-                                    <h3 className="text-2xl font-bold text-neutral-900 mt-2">Custom Solution Design</h3>
+                                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mt-2">Custom Solution Design</h3>
                                 </div>
                                 <p className="text-neutral-600 leading-relaxed">
                                     Our team designs an AI automation solution tailored specifically to your needs and existing systems. We provide detailed specifications and timelines.
@@ -67,7 +67,7 @@ function HowItWorks() {
                                     <div className="flex-shrink-0 w-12 h-12 bg-hero-bg-dark text-white rounded-xl flex items-center justify-center text-lg font-bold">
                                         3
                                     </div>
-                                    <h3 className="text-2xl font-bold text-neutral-900 mt-2">Development & Testing</h3>
+                                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mt-2">Development & Testing</h3>
                                 </div>
                                 <p className="text-neutral-600 leading-relaxed">
                                     We build, test, and refine your solution, keeping you involved throughout the process. Regular updates ensure the solution meets your expectations.
@@ -85,7 +85,7 @@ function HowItWorks() {
                                     <div className="flex-shrink-0 w-12 h-12 bg-hero-bg-dark text-white rounded-xl flex items-center justify-center text-lg font-bold">
                                         4
                                     </div>
-                                    <h3 className="text-2xl font-bold text-neutral-900 mt-2">Launch & Support</h3>
+                                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mt-2">Launch & Support</h3>
                                 </div>
                                 <p className="text-neutral-600 leading-relaxed">
                                     We deploy your solution and provide ongoing support to ensure optimal performance. Your success is our success.

@@ -10,7 +10,7 @@ function Hero() {
     }, []);
 
     return (
-        <section className="relative bg-gradient-to-b from-hero-bg-dark to-hero-bg-light min-h-screen flex items-end overflow-hidden">
+        <section className="relative bg-gradient-to-b from-hero-bg-dark to-hero-bg-light min-h-screen flex items-center sm:items-end overflow-hidden">
             {/* Moving squares background */}
             <div className="absolute inset-0 opacity-20">
                 <Squares
@@ -25,14 +25,14 @@ function Hero() {
             {/* Gradient overlay to fade squares behind text */}
             <div className="absolute inset-0 bg-gradient-to-t from-hero-bg-dark via-hero-bg-dark/80 to-transparent pointer-events-none"></div>
 
-            <div className="relative w-full px-4 sm:px-6 lg:px-8 pb-20 lg:pb-24 mb-20">
+            <div className="relative w-full px-4 sm:px-6 lg:px-8 py-12 sm:pb-20 lg:pb-24 sm:mb-20">
                 <div className="max-w-6xl">
                     {/* Main headline */}
-                    <h1 className={`text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-hero-text mb-10 leading-[1.1] tracking-tight whitespace-nowrap transition-all duration-1000 ${
+                    <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-hero-text mb-6 sm:mb-10 leading-[1.1] tracking-tight transition-all duration-1000 ${
                         hasAnimated ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
                     }`}>
-                        Custom AI Automation
-                        <span className={`block mt-2 bg-gradient-to-r from-hero-accent to-hero-accent-dark bg-clip-text text-transparent whitespace-nowrap transition-all duration-1000 delay-200 ${
+                        <span className="block sm:whitespace-nowrap">Custom AI Automation</span>
+                        <span className={`block mt-2 bg-gradient-to-r from-hero-accent to-hero-accent-dark bg-clip-text text-transparent sm:whitespace-nowrap transition-all duration-1000 delay-200 ${
                             hasAnimated ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
                         }`}>
                             Built for Your Business
@@ -40,7 +40,7 @@ function Hero() {
                     </h1>
 
                     {/* Subheadline */}
-                    <p className={`text-xl sm:text-2xl text-hero-text-muted mb-12 max-w-3xl leading-relaxed font-light transition-all duration-1000 delay-400 ${
+                    <p className={`text-lg sm:text-xl lg:text-2xl text-hero-text-muted mb-8 sm:mb-12 max-w-3xl leading-relaxed font-light transition-all duration-1000 delay-400 ${
                         hasAnimated ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
                     }`}>
                         We develop tailored AI solutions that streamline your operations, eliminate repetitive tasks, and accelerate growth.
