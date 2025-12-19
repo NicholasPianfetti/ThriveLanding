@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
   	extend: {
+  		animation: {
+  			'bounce-slow': 'bounce 3s infinite',
+  			'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+  		},
   		colors: {
   			// Main brand colors (sage green) - used throughout the site
   			brand: {

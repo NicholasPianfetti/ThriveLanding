@@ -33,59 +33,96 @@ function FAQ() {
     ];
 
     return (
-        <section className="py-24 sm:py-32 bg-hero-accent" ref={elementRef}>
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+            id="faq"
+            className="relative py-32 sm:py-40 overflow-hidden"
+            ref={elementRef}
+            style={{
+                background: `
+                    radial-gradient(circle at 90% 10%, rgba(232, 220, 196, 0.3), transparent 40%),
+                    radial-gradient(circle at 10% 90%, rgba(232, 220, 196, 0.4), transparent 40%),
+                    linear-gradient(to bottom, #f5f0e8, #e8dcc4)
+                `
+            }}
+        >
+            {/* Decorative elements */}
+            <div className="absolute top-10 left-10 w-40 h-px bg-gradient-to-r from-hero-bg-dark/10 to-transparent" />
+            <div className="absolute bottom-10 right-10 w-px h-40 bg-gradient-to-b from-transparent to-hero-bg-dark/10" />
+
+            <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 relative">
                 {/* Section header */}
-                <div className={`text-center mb-16 transition-all duration-700 ${
+                <div className={`mb-20 transition-all duration-1000 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}>
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 sm:mb-6 tracking-tight">
-                        Frequently Asked Questions
+                    <div className="mb-4">
+                        <span className="text-hero-bg-dark/60 text-sm tracking-[0.25em] uppercase font-medium">
+                            Questions & Answers
+                        </span>
+                        <div className="h-px bg-gradient-to-r from-hero-bg-dark/20 to-transparent mt-2 w-24" />
+                    </div>
+                    <h2 className="font-['Playfair_Display'] text-4xl sm:text-5xl lg:text-6xl font-bold text-hero-bg-dark mb-6 tracking-tight leading-[1.1]">
+                        Frequently Asked
+                        <span className="block italic font-light mt-1">Questions</span>
                     </h2>
-                    <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed font-light">
+                    <p className="text-lg sm:text-xl text-hero-bg-dark/70 leading-relaxed font-light max-w-2xl">
                         Everything you need to know about our custom AI automation services.
                     </p>
                 </div>
 
-                {/* FAQ Accordion */}
-                <div className={`space-y-4 transition-all duration-700 delay-200 ${
+                {/* FAQ Accordion with refined design */}
+                <div className={`space-y-3 transition-all duration-1000 delay-200 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}>
                     {faqs.map((faq, index) => (
                         <div
                             key={index}
-                            className="bg-white border border-neutral-200 rounded-xl overflow-hidden"
+                            className={`group relative bg-white/80 backdrop-blur-sm border border-hero-bg-dark/10 overflow-hidden transition-all duration-300 ${
+                                openIndex === index ? 'shadow-lg shadow-hero-bg-dark/5' : 'hover:border-hero-bg-dark/20'
+                            }`}
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="w-full flex items-center justify-between p-4 sm:p-6 text-left hover:bg-neutral-50 transition-colors"
+                                className="w-full flex items-center justify-between p-6 sm:p-8 text-left transition-all duration-300 group-hover:bg-white/50"
                             >
-                                <span className="text-base sm:text-lg font-semibold text-neutral-900 pr-6 sm:pr-8">
-                                    {faq.question}
-                                </span>
-                                <svg
-                                    className={`w-6 h-6 text-hero-bg-dark flex-shrink-0 transition-transform duration-200 ${
-                                        openIndex === index ? 'rotate-180' : ''
-                                    }`}
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M19 9l-7 7-7-7"
-                                    />
-                                </svg>
+                                <div className="flex items-start gap-4 flex-1 pr-6">
+                                    <span className="text-hero-bg-dark/30 font-['Playfair_Display'] text-sm font-semibold mt-1 select-none">
+                                        {String(index + 1).padStart(2, '0')}
+                                    </span>
+                                    <span className="font-['Playfair_Display'] text-lg sm:text-xl font-semibold text-hero-bg-dark leading-tight">
+                                        {faq.question}
+                                    </span>
+                                </div>
+                                <div className={`flex-shrink-0 w-10 h-10 rounded-full border border-hero-bg-dark/20 flex items-center justify-center transition-all duration-300 ${
+                                    openIndex === index ? 'bg-hero-bg-dark border-hero-bg-dark rotate-180' : 'group-hover:border-hero-bg-dark/40'
+                                }`}>
+                                    <svg
+                                        className={`w-5 h-5 transition-colors ${
+                                            openIndex === index ? 'text-hero-accent' : 'text-hero-bg-dark'
+                                        }`}
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M19 9l-7 7-7-7"
+                                        />
+                                    </svg>
+                                </div>
                             </button>
                             <div
-                                className={`overflow-hidden transition-all duration-300 ${
-                                    openIndex === index ? 'max-h-96' : 'max-h-0'
+                                className={`overflow-hidden transition-all duration-500 ${
+                                    openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                                 }`}
                             >
-                                <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-sm sm:text-base text-neutral-600 leading-relaxed">
-                                    {faq.answer}
+                                <div className="px-6 sm:px-8 pb-6 sm:pb-8">
+                                    <div className="pl-8 border-l-2 border-hero-bg-dark/10">
+                                        <p className="text-hero-bg-dark/70 leading-relaxed font-light">
+                                            {faq.answer}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -93,17 +130,29 @@ function FAQ() {
                 </div>
 
                 {/* CTA */}
-                <div className={`text-center mt-12 pt-12 border-t border-neutral-200 transition-all duration-700 delay-400 ${
+                <div className={`text-center mt-20 pt-16 border-t border-hero-bg-dark/10 transition-all duration-1000 delay-400 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}>
-                    <p className="text-lg text-neutral-600 mb-6">
+                    <p className="font-['Playfair_Display'] text-xl sm:text-2xl italic text-hero-bg-dark/80 mb-8">
                         Still have questions? We'd love to hear from you.
                     </p>
                     <a
-                        href="#contact"
-                        className="inline-block bg-hero-bg-dark text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-hero-bg-light hover:shadow-lg hover:shadow-hero-bg-dark/25 transition-all duration-200"
+                        href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=e8dcc4&primary_color=1a2f23"
+                        className="group inline-flex items-center gap-3 bg-hero-bg-dark text-hero-accent px-10 py-5 text-lg font-semibold overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-hero-bg-dark/30"
+                        style={{
+                            clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))'
+                        }}
                     >
-                        Get in Touch
+                        <span className="relative z-10">Get in Touch</span>
+                        <svg
+                            className="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                        <div className="absolute inset-0 bg-hero-bg-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </a>
                 </div>
             </div>

@@ -3,81 +3,137 @@ import { useScrollAnimation } from './hooks/useScrollAnimation';
 function About() {
     const { elementRef, isVisible } = useScrollAnimation(0.1);
 
+    const features = [
+        {
+            number: '01',
+            title: 'Custom Built',
+            description: 'Every solution is tailored to your unique business requirements and processes.',
+            icon: (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+            ),
+        },
+        {
+            number: '02',
+            title: 'Seamless Integration',
+            description: 'Our tools integrate smoothly with your existing systems and workflows, minimizing disruption and maximizing efficiency.',
+            icon: (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            ),
+        },
+        {
+            number: '03',
+            title: 'Ongoing Support',
+            description: 'We provide continuous support and optimization as your needs evolve, ensuring long-term success.',
+            icon: (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+            ),
+        },
+    ];
+
     return (
-        <section id="about" className="py-24 sm:py-32 bg-hero-accent" ref={elementRef}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section header */}
-                <div className={`max-w-3xl mx-auto text-center mb-20 transition-all duration-700 ${
+        <section
+            id="about"
+            className="relative py-32 sm:py-40 overflow-hidden"
+            ref={elementRef}
+            style={{
+                background: `
+                    radial-gradient(circle at 10% 20%, rgba(232, 220, 196, 0.4), transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(232, 220, 196, 0.3), transparent 40%),
+                    linear-gradient(to bottom, #e8dcc4, #f5f0e8)
+                `
+            }}
+        >
+            {/* Decorative elements */}
+            <div className="absolute top-20 right-10 w-px h-32 bg-gradient-to-b from-transparent via-hero-bg-dark/10 to-transparent" />
+            <div className="absolute bottom-20 left-10 w-32 h-px bg-gradient-to-r from-transparent via-hero-bg-dark/10 to-transparent" />
+
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative">
+                {/* Section header with editorial styling */}
+                <div className={`max-w-3xl mb-24 transition-all duration-1000 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}>
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 tracking-tight">
-                        Why Choose Thrive
+                    <div className="mb-4">
+                        <span className="text-hero-bg-dark/60 text-sm tracking-[0.25em] uppercase font-medium">
+                            Our Approach
+                        </span>
+                        <div className="h-px bg-gradient-to-r from-hero-bg-dark/20 to-transparent mt-2 w-24" />
+                    </div>
+                    <h2 className="font-['Playfair_Display'] text-5xl sm:text-6xl lg:text-7xl font-bold text-hero-bg-dark mb-6 tracking-tight leading-[1.1]">
+                        Why Choose
+                        <span className="block italic font-light mt-1">Thrive</span>
                     </h2>
-                    <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed font-light">
+                    <p className="text-lg sm:text-xl text-hero-bg-dark/70 leading-relaxed font-light">
                         We develop custom AI automation tools that solve your specific business challenges.
                     </p>
                 </div>
 
-                {/* Feature cards */}
-                <div className="grid md:grid-cols-3 gap-8">
-                    {/* Card 1 */}
-                    <div className={`group relative bg-white border border-neutral-200 rounded-2xl p-8 hover:shadow-xl hover:shadow-hero-bg-dark/10 hover:-translate-y-1 transition-all duration-700 delay-100 ${
-                        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                    }`}>
-                        <div className="absolute top-6 right-6 text-6xl font-bold text-hero-bg-dark/10 group-hover:text-hero-bg-dark/20 transition-colors">
-                            01
-                        </div>
-                        <div className="relative">
-                            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-hero-bg-dark to-hero-bg-light flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                                </svg>
-                            </div>
-                            <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Custom Built</h3>
-                            <p className="text-neutral-600 leading-relaxed">
-                                Every solution is tailored to your unique business requirements and processes.
-                            </p>
-                        </div>
-                    </div>
+                {/* Feature cards with overlapping layout */}
+                <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+                    {features.map((feature, index) => (
+                        <div
+                            key={index}
+                            className={`group relative transition-all duration-1000 ${
+                                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+                            }`}
+                            style={{ transitionDelay: `${index * 150 + 200}ms` }}
+                        >
+                            {/* Card background with sophisticated shadow */}
+                            <div className="relative h-full">
+                                {/* Decorative number in background */}
+                                <div className="absolute -top-6 -right-4 font-['Playfair_Display'] text-[120px] font-bold text-hero-bg-dark/5 select-none pointer-events-none group-hover:text-hero-bg-dark/10 transition-colors duration-500">
+                                    {feature.number}
+                                </div>
 
-                    {/* Card 2 */}
-                    <div className={`group relative bg-white border border-neutral-200 rounded-2xl p-8 hover:shadow-xl hover:shadow-hero-bg-dark/10 hover:-translate-y-1 transition-all duration-700 delay-300 ${
-                        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                    }`}>
-                        <div className="absolute top-6 right-6 text-6xl font-bold text-hero-bg-dark/10 group-hover:text-hero-bg-dark/20 transition-colors">
-                            02
-                        </div>
-                        <div className="relative">
-                            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-hero-bg-dark to-hero-bg-light flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                            </div>
-                            <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Seamless Integration</h3>
-                            <p className="text-neutral-600 leading-relaxed">
-                                Our tools integrate smoothly with your existing systems and workflows, minimizing disruption and maximizing efficiency.
-                            </p>
-                        </div>
-                    </div>
+                                {/* Main card */}
+                                <div className="relative bg-white/80 backdrop-blur-sm border border-hero-bg-dark/10 p-8 lg:p-10 h-full transition-all duration-500 group-hover:bg-white group-hover:shadow-2xl group-hover:shadow-hero-bg-dark/10 group-hover:-translate-y-2">
+                                    {/* Icon */}
+                                    <div className="relative mb-8">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-hero-bg-dark/10 to-hero-bg-light/10 blur-xl" />
+                                        <div className="relative w-16 h-16 bg-gradient-to-br from-hero-bg-dark to-hero-bg-light flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                {feature.icon}
+                                            </svg>
+                                        </div>
+                                    </div>
 
-                    {/* Card 3 */}
-                    <div className={`group relative bg-white border border-neutral-200 rounded-2xl p-8 hover:shadow-xl hover:shadow-hero-bg-dark/10 hover:-translate-y-1 transition-all duration-700 delay-500 ${
-                        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                    }`}>
-                        <div className="absolute top-6 right-6 text-6xl font-bold text-hero-bg-dark/10 group-hover:text-hero-bg-dark/20 transition-colors">
-                            03
-                        </div>
-                        <div className="relative">
-                            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-hero-bg-dark to-hero-bg-light flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
+                                    {/* Content */}
+                                    <div className="relative">
+                                        {/* Number badge */}
+                                        <div className="inline-block mb-4">
+                                            <span className="text-hero-bg-dark/40 text-xs tracking-[0.2em] uppercase font-semibold">
+                                                {feature.number}
+                                            </span>
+                                            <div className="h-px bg-hero-bg-dark/20 mt-1" />
+                                        </div>
+
+                                        <h3 className="font-['Playfair_Display'] text-2xl sm:text-3xl font-bold text-hero-bg-dark mb-4 leading-tight">
+                                            {feature.title}
+                                        </h3>
+                                        <p className="text-hero-bg-dark/70 leading-relaxed font-light">
+                                            {feature.description}
+                                        </p>
+
+                                        {/* Decorative corner accent */}
+                                        <div className="absolute bottom-0 right-0 w-12 h-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                            <div className="absolute bottom-0 right-0 w-8 h-px bg-gradient-to-l from-hero-bg-dark/20 to-transparent" />
+                                            <div className="absolute bottom-0 right-0 w-px h-8 bg-gradient-to-t from-hero-bg-dark/20 to-transparent" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4">Ongoing Support</h3>
-                            <p className="text-neutral-600 leading-relaxed">
-                                We provide continuous support and optimization as your needs evolve, ensuring long-term success.
-                            </p>
                         </div>
+                    ))}
+                </div>
+
+                {/* Pull quote decoration */}
+                <div className={`mt-24 max-w-4xl mx-auto text-center transition-all duration-1000 delay-700 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}>
+                    <div className="relative inline-block">
+                        <div className="absolute -top-6 -left-6 text-6xl font-['Playfair_Display'] text-hero-bg-dark/10">"</div>
+                        <p className="font-['Playfair_Display'] text-2xl sm:text-3xl italic text-hero-bg-dark/80 leading-relaxed px-12">
+                            Automation isn't about replacing people—it's about empowering them to focus on what truly matters.
+                        </p>
                     </div>
                 </div>
             </div>
