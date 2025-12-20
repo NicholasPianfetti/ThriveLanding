@@ -39,15 +39,15 @@ function FAQ() {
             ref={elementRef}
             style={{
                 background: `
-                    radial-gradient(circle at 90% 10%, rgba(232, 220, 196, 0.3), transparent 40%),
-                    radial-gradient(circle at 10% 90%, rgba(232, 220, 196, 0.4), transparent 40%),
-                    linear-gradient(to bottom, #f5f0e8, #e8dcc4)
+                    radial-gradient(circle at 90% 10%, rgba(33, 150, 243, 0.06), transparent 40%),
+                    radial-gradient(circle at 10% 90%, rgba(33, 150, 243, 0.08), transparent 40%),
+                    linear-gradient(to bottom, #f5f5f5, #ffffff)
                 `
             }}
         >
             {/* Decorative elements */}
-            <div className="absolute top-10 left-10 w-40 h-px bg-gradient-to-r from-hero-bg-dark/10 to-transparent" />
-            <div className="absolute bottom-10 right-10 w-px h-40 bg-gradient-to-b from-transparent to-hero-bg-dark/10" />
+            <div className="absolute top-10 left-10 w-40 h-px bg-gradient-to-r from-hero-accent/20 to-transparent" />
+            <div className="absolute bottom-10 right-10 w-px h-40 bg-gradient-to-b from-transparent to-hero-accent/20" />
 
             <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 relative">
                 {/* Section header */}
@@ -55,16 +55,16 @@ function FAQ() {
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}>
                     <div className="mb-4">
-                        <span className="text-hero-bg-dark/60 text-sm tracking-[0.25em] uppercase font-medium">
+                        <span className="text-neutral-600 text-sm tracking-[0.25em] uppercase font-medium">
                             Questions & Answers
                         </span>
-                        <div className="h-px bg-gradient-to-r from-hero-bg-dark/20 to-transparent mt-2 w-24" />
+                        <div className="h-px bg-gradient-to-r from-hero-accent/40 to-transparent mt-2 w-24" />
                     </div>
-                    <h2 className="font-['Playfair_Display'] text-4xl sm:text-5xl lg:text-6xl font-bold text-hero-bg-dark mb-6 tracking-tight leading-[1.1]">
+                    <h2 className="font-['Playfair_Display'] text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 tracking-tight leading-[1.1]">
                         Frequently Asked
                         <span className="block italic font-light mt-1">Questions</span>
                     </h2>
-                    <p className="text-lg sm:text-xl text-hero-bg-dark/70 leading-relaxed font-light max-w-2xl">
+                    <p className="text-lg sm:text-xl text-neutral-700 leading-relaxed font-light max-w-2xl">
                         Everything you need to know about our custom AI automation services.
                     </p>
                 </div>
@@ -76,28 +76,28 @@ function FAQ() {
                     {faqs.map((faq, index) => (
                         <div
                             key={index}
-                            className={`group relative bg-white/80 backdrop-blur-sm border border-hero-bg-dark/10 overflow-hidden transition-all duration-300 ${
-                                openIndex === index ? 'shadow-lg shadow-hero-bg-dark/5' : 'hover:border-hero-bg-dark/20'
+                            className={`group relative bg-white/90 backdrop-blur-sm border border-hero-accent/20 overflow-hidden transition-all duration-300 ${
+                                openIndex === index ? 'shadow-lg shadow-hero-accent/10' : 'hover:border-hero-accent/40'
                             }`}
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="w-full flex items-center justify-between p-6 sm:p-8 text-left transition-all duration-300 group-hover:bg-white/50"
+                                className="w-full flex items-center justify-between p-6 sm:p-8 text-left transition-all duration-300 group-hover:bg-white"
                             >
                                 <div className="flex items-start gap-4 flex-1 pr-6">
-                                    <span className="text-hero-bg-dark/30 font-['Playfair_Display'] text-sm font-semibold mt-1 select-none">
+                                    <span className="text-hero-accent/40 font-['Playfair_Display'] text-sm font-semibold mt-1 select-none">
                                         {String(index + 1).padStart(2, '0')}
                                     </span>
-                                    <span className="font-['Playfair_Display'] text-lg sm:text-xl font-semibold text-hero-bg-dark leading-tight">
+                                    <span className="font-['Playfair_Display'] text-lg sm:text-xl font-semibold text-neutral-900 leading-tight">
                                         {faq.question}
                                     </span>
                                 </div>
-                                <div className={`flex-shrink-0 w-10 h-10 rounded-full border border-hero-bg-dark/20 flex items-center justify-center transition-all duration-300 ${
-                                    openIndex === index ? 'bg-hero-bg-dark border-hero-bg-dark rotate-180' : 'group-hover:border-hero-bg-dark/40'
+                                <div className={`flex-shrink-0 w-10 h-10 rounded-full border border-hero-accent/30 flex items-center justify-center transition-all duration-300 ${
+                                    openIndex === index ? 'bg-hero-accent border-hero-accent rotate-180' : 'group-hover:border-hero-accent/50'
                                 }`}>
                                     <svg
                                         className={`w-5 h-5 transition-colors ${
-                                            openIndex === index ? 'text-hero-accent' : 'text-hero-bg-dark'
+                                            openIndex === index ? 'text-white' : 'text-hero-accent'
                                         }`}
                                         fill="none"
                                         stroke="currentColor"
@@ -118,8 +118,8 @@ function FAQ() {
                                 }`}
                             >
                                 <div className="px-6 sm:px-8 pb-6 sm:pb-8">
-                                    <div className="pl-8 border-l-2 border-hero-bg-dark/10">
-                                        <p className="text-hero-bg-dark/70 leading-relaxed font-light">
+                                    <div className="pl-8 border-l-2 border-hero-accent/20">
+                                        <p className="text-neutral-700 leading-relaxed font-light">
                                             {faq.answer}
                                         </p>
                                     </div>
@@ -130,15 +130,15 @@ function FAQ() {
                 </div>
 
                 {/* CTA */}
-                <div className={`text-center mt-20 pt-16 border-t border-hero-bg-dark/10 transition-all duration-1000 delay-400 ${
+                <div className={`text-center mt-20 pt-16 border-t border-hero-accent/10 transition-all duration-1000 delay-400 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}>
-                    <p className="font-['Playfair_Display'] text-xl sm:text-2xl italic text-hero-bg-dark/80 mb-8">
+                    <p className="font-['Playfair_Display'] text-xl sm:text-2xl italic text-neutral-800 mb-8">
                         Still have questions? We'd love to hear from you.
                     </p>
                     <a
-                        href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=e8dcc4&primary_color=1a2f23"
-                        className="group inline-flex items-center gap-3 bg-hero-bg-dark text-hero-accent px-10 py-5 text-lg font-semibold overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-hero-bg-dark/30"
+                        href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=ffffff&primary_color=2196f3"
+                        className="group inline-flex items-center gap-3 bg-hero-accent text-white px-10 py-5 text-lg font-semibold overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-hero-accent/30"
                         style={{
                             clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))'
                         }}
@@ -152,7 +152,7 @@ function FAQ() {
                         >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
-                        <div className="absolute inset-0 bg-hero-bg-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute inset-0 bg-hero-accent-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </a>
                 </div>
             </div>

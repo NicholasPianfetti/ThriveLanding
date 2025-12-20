@@ -6,8 +6,8 @@ function Footer() {
                 className="absolute inset-0 opacity-10 pointer-events-none"
                 style={{
                     background: `
-                        radial-gradient(circle at 20% 80%, rgba(232, 220, 196, 0.15), transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(45, 74, 56, 0.2), transparent 50%)
+                        radial-gradient(circle at 20% 80%, rgba(33, 150, 243, 0.15), transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(25, 118, 210, 0.2), transparent 50%)
                     `
                 }}
             />
@@ -22,11 +22,8 @@ function Footer() {
                             </span>
                             <div className="h-px bg-gradient-to-r from-transparent via-hero-accent/30 to-transparent mt-2" />
                         </div>
-                        <h3 className="font-['Playfair_Display'] text-3xl sm:text-4xl font-bold text-hero-text mb-4">
-                            Stay Updated
-                        </h3>
                         <p className="text-hero-text-muted/80 mb-8 leading-relaxed font-light">
-                            Get the latest insights on AI automation and business optimization delivered to your inbox.
+                            Get the latest insights on Thrive AI automation and business optimization through your inbox.
                         </p>
                         <form className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
                             <input
@@ -146,7 +143,7 @@ function Footer() {
                     <div className="pt-8 border-t border-hero-accent/10">
                         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                             <p className="text-hero-text-muted/50 text-sm font-light">
-                                &copy; {new Date().getFullYear()} Thrive. All rights reserved.
+                                &copy; {new Date().getFullYear()} Thrive AI. All rights reserved.
                             </p>
                             <div className="flex items-center gap-6 text-sm">
                                 {/* <a href="#" className="text-hero-text-muted/50 hover:text-hero-accent transition-colors font-light">
@@ -157,9 +154,6 @@ function Footer() {
                                     Terms of Service
                                 </a>
                                 <span className="text-hero-accent/20">·</span> */}
-                                <a href="#" className="text-hero-text-muted/50 hover:text-hero-accent transition-colors font-light">
-                                    Crafted with precision
-                                </a>
                             </div>
                         </div>
                     </div>

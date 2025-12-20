@@ -25,9 +25,9 @@ function Hero() {
             className="relative min-h-screen flex items-center overflow-hidden"
             style={{
                 background: `
-                    radial-gradient(ellipse 80% 60% at 30% 40%, rgba(232, 220, 196, 0.15), transparent),
-                    radial-gradient(circle at 80% 20%, rgba(232, 220, 196, 0.1), transparent),
-                    linear-gradient(135deg, #1a2f23 0%, #2d4a38 50%, #1a2f23 100%)
+                    radial-gradient(ellipse 80% 60% at 30% 40%, rgba(33, 150, 243, 0.15), transparent),
+                    radial-gradient(circle at 80% 20%, rgba(33, 150, 243, 0.1), transparent),
+                    linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)
                 `
             }}
         >
@@ -37,8 +37,8 @@ function Hero() {
                     className="absolute inset-0 animate-pulse-slow"
                     style={{
                         background: `
-                            radial-gradient(circle at 20% 80%, rgba(232, 220, 196, 0.2) 0%, transparent 50%),
-                            radial-gradient(circle at 80% 20%, rgba(45, 74, 56, 0.3) 0%, transparent 50%)
+                            radial-gradient(circle at 20% 80%, rgba(33, 150, 243, 0.2) 0%, transparent 50%),
+                            radial-gradient(circle at 80% 20%, rgba(25, 118, 210, 0.3) 0%, transparent 50%)
                         `,
                         animationDuration: '8s'
                     }}
@@ -53,9 +53,9 @@ function Hero() {
                 <Squares
                     direction="diagonal"
                     speed={0.3}
-                    borderColor="#e8dcc4"
+                    borderColor="#2196f3"
                     squareSize={100}
-                    hoverFillColor="rgba(232, 220, 196, 0.08)"
+                    hoverFillColor="rgba(33, 150, 243, 0.08)"
                 />
             </div>
 
@@ -115,7 +115,7 @@ function Hero() {
                             }`}
                             style={{ fontSize: 'clamp(1.75rem, 5vw, 4.5rem)' }}
                         >
-                            Built for Your Business
+                            Scale Without Hiring
                         </span>
                     </h1>
 
@@ -137,8 +137,8 @@ function Hero() {
                             }`}
                         >
                             <a
-                                href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=e8dcc4&primary_color=1a2f23"
-                                className="group relative inline-flex items-center gap-3 bg-hero-accent text-hero-bg-dark px-8 sm:px-10 py-4 sm:py-5 rounded-none text-base sm:text-lg font-semibold overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-hero-accent/30"
+                                href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0a0a0a&primary_color=2196f3"
+                                className="group relative inline-flex items-center gap-3 bg-hero-accent text-white px-8 sm:px-10 py-4 sm:py-5 rounded-none text-base sm:text-lg font-semibold overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-hero-accent/30"
                                 style={{
                                     clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))'
                                 }}
@@ -165,9 +165,9 @@ function Hero() {
                         style={{ transform: `translateY(calc(-50% + ${-parallaxOffset * 0.2}px))` }}
                     >
                         <div className="relative w-64 h-64">
-                            <div className="absolute inset-0 border border-hero-accent/20 rotate-45" />
+                            <div className="absolute inset-0 border border-hero-accent/30 rotate-45" />
                             <div className="absolute inset-8 border border-hero-accent/20 rotate-45" />
-                            <div className="absolute inset-16 border border-hero-accent/30 rotate-45" />
+                            <div className="absolute inset-16 border border-hero-accent/40 rotate-45" />
                         </div>
                     </div>
                 </div>

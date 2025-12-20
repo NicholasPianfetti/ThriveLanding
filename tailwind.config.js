@@ -11,39 +11,39 @@ export default {
   			'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
   		},
   		colors: {
-  			// Main brand colors (sage green) - used throughout the site
+  			// Main brand colors - vibrant blue from logo
   			brand: {
-  				'50': '#f4f8f6',
-  				'100': '#e6eeea',
-  				'200': '#cddcd4',
-  				'300': '#b3c9be',
-  				'400': '#9bb7aa',
-  				'500': '#7f9f92',
-  				'600': '#67877a',
-  				'700': '#526e63',
-  				'800': '#3f554c',
-  				'900': '#2d3c36'
+  				'50': '#e3f2fd',
+  				'100': '#bbdefb',
+  				'200': '#90caf9',
+  				'300': '#64b5f6',
+  				'400': '#42a5f5',
+  				'500': '#2196f3',
+  				'600': '#1e88e5',
+  				'700': '#1976d2',
+  				'800': '#1565c0',
+  				'900': '#0d47a1'
   			},
-  			// Hero section colors - dark forest green and beige
+  			// Hero section colors - blue, black, white
   			hero: {
-  				'bg-dark': '#1a2f23',      // Dark forest green background
-  				'bg-light': '#2d4a38',     // Lighter forest green (for gradients)
-  				'accent': '#e8dcc4',       // Beige accent
-  				'accent-dark': '#d4c5a9',  // Darker beige (for hover states)
-  				'text': '#f5f0e8',         // Off-white text color
-  				'text-muted': '#c9bda8',   // Muted beige text
+  				'bg-dark': '#0a0a0a',      // Deep black background
+  				'bg-light': '#1a1a1a',     // Lighter black (for gradients)
+  				'accent': '#2196f3',       // Vibrant blue accent
+  				'accent-dark': '#1976d2',  // Darker blue (for hover states)
+  				'text': '#ffffff',         // Pure white text
+  				'text-muted': '#a0a0a0',   // Muted gray text
   			},
   			neutral: {
-  				'50': '#fafbf9',
-  				'100': '#f3f5f2',
-  				'200': '#e4e8e3',
-  				'300': '#d1d6d0',
-  				'400': '#a8b0a8',
-  				'500': '#7c857e',
-  				'600': '#5f6a63',
-  				'700': '#49544e',
-  				'800': '#343d38',
-  				'900': '#202724'
+  				'50': '#fafafa',
+  				'100': '#f5f5f5',
+  				'200': '#e5e5e5',
+  				'300': '#d4d4d4',
+  				'400': '#a3a3a3',
+  				'500': '#737373',
+  				'600': '#525252',
+  				'700': '#404040',
+  				'800': '#262626',
+  				'900': '#171717'
   			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

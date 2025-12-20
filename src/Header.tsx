@@ -55,24 +55,32 @@ function Header() {
                     {/* Logo */}
                     <a
                         href="#"
-                        className={`flex items-center gap-2 transition-all duration-300 group ${
-                            !isScrolled ? 'bg-hero-accent/95 backdrop-blur-sm px-5 py-2.5' : ''
+                        className={`flex items-center gap-3 transition-all duration-300 group ${
+                            !isScrolled ? 'bg-white/95 backdrop-blur-sm px-5 py-2.5' : ''
                         }`}
                         style={!isScrolled ? {
                             clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))'
                         } : {}}
                     >
-                        <span className={`font-['Playfair_Display'] font-bold text-xl sm:text-2xl transition-colors ${
-                            isScrolled ? 'text-hero-accent' : 'text-hero-bg-dark'
-                        }`}>
-                            Thrive
-                        </span>
-                        {!isScrolled && (
-                            <div className="w-px h-5 bg-hero-bg-dark/20" />
-                        )}
-                        {!isScrolled && (
-                            <span className="text-hero-bg-dark/60 text-xs tracking-widest uppercase">AI</span>
-                        )}
+                        <img
+                            src={isScrolled ? "/ThriveSymbolDark.png" : "/ThriveSymbolDark.png"}
+                            alt="Thrive AI Symbol"
+                            className={`transition-all duration-300 ${
+                                isScrolled ? 'h-8 brightness-0 invert' : 'h-10'
+                            }`}
+                        />
+                        <div className="flex flex-col leading-none gap-0.5">
+                            <span className={`transition-all duration-300 ${
+                                isScrolled ? 'text-[0.95rem] text-hero-accent' : 'text-[1.1rem] text-neutral-900'
+                            }`} style={{
+                                fontFamily: "'Outfit', sans-serif",
+                                fontWeight: 900,
+                                letterSpacing: '-0.02em',
+                                lineHeight: 0.9
+                            }}>
+                                THRIVE AI
+                            </span>
+                        </div>
                     </a>
 
                     {/* Desktop Navigation */}

@@ -37,8 +37,8 @@ function HowItWorks() {
                 className="absolute inset-0 opacity-20"
                 style={{
                     background: `
-                        radial-gradient(circle at 20% 30%, rgba(232, 220, 196, 0.15), transparent 50%),
-                        radial-gradient(circle at 80% 70%, rgba(45, 74, 56, 0.2), transparent 50%)
+                        radial-gradient(circle at 20% 30%, rgba(33, 150, 243, 0.15), transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(25, 118, 210, 0.2), transparent 50%)
                     `
                 }}
             />
@@ -144,8 +144,8 @@ function HowItWorks() {
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}>
                     <a
-                        href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=e8dcc4&primary_color=1a2f23"
-                        className="group inline-flex items-center gap-3 bg-hero-accent text-hero-bg-dark px-10 py-5 text-lg font-semibold overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-hero-accent/30"
+                        href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0a0a0a&primary_color=2196f3"
+                        className="group inline-flex items-center gap-3 bg-hero-accent text-white px-10 py-5 text-lg font-semibold overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-hero-accent/30"
                         style={{
                             clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))'
                         }}
