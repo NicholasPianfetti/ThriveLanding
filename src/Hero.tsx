@@ -76,8 +76,11 @@ function Hero() {
                     {/* Eyebrow text */}
                     <div
                         className={`inline-block mb-6 transition-all duration-1000 ${
-                            hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                         }`}
+                        style={{
+                            transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                        }}
                     >
                         <span className="text-hero-accent text-sm sm:text-base tracking-[0.3em] uppercase font-medium">
                             Enterprise AI Solutions
@@ -88,32 +91,37 @@ function Hero() {
                     {/* Main headline with editorial typography */}
                     <h1 className="mb-8 sm:mb-12">
                         <span
-                            className={`block font-['Playfair_Display'] font-bold text-hero-text leading-[0.95] tracking-tight transition-all duration-1200 delay-200 ${
-                                hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                            className={`block font-['Playfair_Display'] font-bold text-hero-text leading-[0.95] tracking-tight transition-all duration-1400 delay-100 ${
+                                hasAnimated ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-[0.98]'
                             }`}
                             style={{
                                 fontSize: 'clamp(2.5rem, 8vw, 7rem)',
-                                textShadow: '0 4px 20px rgba(0,0,0,0.3)'
+                                textShadow: '0 4px 20px rgba(0,0,0,0.3)',
+                                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
                             }}
                         >
                             Custom AI
                         </span>
                         <span
-                            className={`block font-['Playfair_Display'] font-bold leading-[0.95] tracking-tight mt-1 sm:mt-2 bg-gradient-to-r from-hero-accent via-hero-accent-dark to-hero-accent bg-clip-text text-transparent transition-all duration-1200 delay-400 ${
-                                hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                            className={`block font-['Playfair_Display'] font-bold leading-[0.95] tracking-tight mt-1 sm:mt-2 bg-gradient-to-r from-hero-accent via-hero-accent-dark to-hero-accent bg-clip-text text-transparent transition-all duration-1400 delay-300 ${
+                                hasAnimated ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-[0.98]'
                             }`}
                             style={{
                                 fontSize: 'clamp(2.5rem, 8vw, 7rem)',
-                                filter: 'drop-shadow(0 2px 12px rgba(232, 220, 196, 0.3))'
+                                filter: 'drop-shadow(0 2px 12px rgba(232, 220, 196, 0.3))',
+                                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
                             }}
                         >
                             Automation
                         </span>
                         <span
-                            className={`block font-['Playfair_Display'] italic font-light text-hero-text/90 leading-[0.95] tracking-tight mt-1 sm:mt-2 transition-all duration-1200 delay-600 ${
-                                hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                            className={`block font-['Playfair_Display'] italic font-light text-hero-text/90 leading-[0.95] tracking-tight mt-1 sm:mt-2 transition-all duration-1400 delay-500 ${
+                                hasAnimated ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-[0.98]'
                             }`}
-                            style={{ fontSize: 'clamp(1.75rem, 5vw, 4.5rem)' }}
+                            style={{
+                                fontSize: 'clamp(1.75rem, 5vw, 4.5rem)',
+                                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                            }}
                         >
                             Scale Without Hiring
                         </span>
@@ -122,9 +130,12 @@ function Hero() {
                     {/* Subheadline with refined typography */}
                     <div className="max-w-2xl">
                         <p
-                            className={`text-base sm:text-lg lg:text-xl text-hero-text-muted/90 leading-relaxed font-light mb-10 sm:mb-14 transition-all duration-1000 delay-800 ${
-                                hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            className={`text-base sm:text-lg lg:text-xl text-hero-text-muted/90 leading-relaxed font-light mb-10 sm:mb-14 transition-all duration-1200 delay-700 ${
+                                hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                             }`}
+                            style={{
+                                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                            }}
                         >
                             We develop tailored AI solutions that streamline your operations,
                             eliminate repetitive tasks, and accelerate growth.
@@ -132,9 +143,12 @@ function Hero() {
 
                         {/* CTA with sophisticated styling */}
                         <div
-                            className={`flex flex-col sm:flex-row gap-4 items-start transition-all duration-1000 delay-1000 ${
-                                hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            className={`flex flex-col sm:flex-row gap-4 items-start transition-all duration-1200 delay-900 ${
+                                hasAnimated ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-[0.98]'
                             }`}
+                            style={{
+                                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                            }}
                         >
                             <a
                                 href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0a0a0a&primary_color=2196f3"

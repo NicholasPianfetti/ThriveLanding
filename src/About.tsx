@@ -49,9 +49,11 @@ function About() {
 
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative">
                 {/* Section header with editorial styling */}
-                <div className={`max-w-3xl mb-24 transition-all duration-1000 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}>
+                <div className={`max-w-3xl mb-24 transition-all duration-1200 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                }`} style={{
+                    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                }}>
                     <div className="mb-4">
                         <span className="text-neutral-600 text-sm tracking-[0.25em] uppercase font-medium">
                             Our Approach
@@ -71,10 +73,13 @@ function About() {
                     {features.map((feature, index) => (
                         <div
                             key={index}
-                            className={`group relative transition-all duration-1000 ${
-                                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+                            className={`group relative transition-all duration-1200 ${
+                                isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-[0.98]'
                             }`}
-                            style={{ transitionDelay: `${index * 150 + 200}ms` }}
+                            style={{
+                                transitionDelay: `${index * 150 + 200}ms`,
+                                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                            }}
                         >
                             {/* Card background with sophisticated shadow */}
                             <div className="relative h-full">
@@ -125,9 +130,11 @@ function About() {
                 </div>
 
                 {/* Pull quote decoration */}
-                <div className={`mt-24 max-w-4xl mx-auto text-center transition-all duration-1000 delay-700 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}>
+                <div className={`mt-24 max-w-4xl mx-auto text-center transition-all duration-1200 delay-700 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                }`} style={{
+                    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                }}>
                     <div className="relative inline-block">
                         <p className="font-['Playfair_Display'] text-2xl sm:text-3xl italic text-neutral-800 leading-relaxed px-12">
                             Automation isn't about replacing people. It's about empowering them to focus on what truly matters.

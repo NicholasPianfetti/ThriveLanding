@@ -49,9 +49,11 @@ function HowItWorks() {
 
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative">
                 {/* Section header */}
-                <div className={`max-w-3xl mb-24 transition-all duration-1000 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}>
+                <div className={`max-w-3xl mb-24 transition-all duration-1200 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                }`} style={{
+                    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                }}>
                     <div className="mb-4">
                         <span className="text-hero-accent/80 text-sm tracking-[0.25em] uppercase font-medium">
                             Our Process
@@ -96,10 +98,13 @@ function HowItWorks() {
                         {steps.map((step, index) => (
                             <div
                                 key={index}
-                                className={`group relative transition-all duration-1000 ${
-                                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+                                className={`group relative transition-all duration-1200 ${
+                                    isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-[0.98]'
                                 } ${index % 2 === 1 ? 'md:translate-y-24' : ''}`}
-                                style={{ transitionDelay: `${index * 200 + 200}ms` }}
+                                style={{
+                                    transitionDelay: `${index * 200 + 200}ms`,
+                                    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                                }}
                             >
                                 {/* Large decorative number */}
                                 <div className="absolute -top-8 -left-4 font-['Playfair_Display'] text-[140px] leading-none font-bold text-hero-accent/5 select-none pointer-events-none group-hover:text-hero-accent/10 transition-colors duration-700">
@@ -140,9 +145,11 @@ function HowItWorks() {
                 </div>
 
                 {/* CTA */}
-                <div className={`text-center mt-24 transition-all duration-1000 delay-1000 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}>
+                <div className={`text-center mt-24 transition-all duration-1200 delay-1000 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                }`} style={{
+                    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                }}>
                     <a
                         href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0a0a0a&primary_color=2196f3"
                         className="group inline-flex items-center gap-3 bg-hero-accent text-white px-10 py-5 text-lg font-semibold overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-hero-accent/30"

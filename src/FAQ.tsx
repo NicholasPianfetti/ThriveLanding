@@ -51,9 +51,11 @@ function FAQ() {
 
             <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 relative">
                 {/* Section header */}
-                <div className={`mb-20 transition-all duration-1000 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}>
+                <div className={`mb-20 transition-all duration-1200 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                }`} style={{
+                    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                }}>
                     <div className="mb-4">
                         <span className="text-neutral-600 text-sm tracking-[0.25em] uppercase font-medium">
                             Questions & Answers
@@ -70,9 +72,11 @@ function FAQ() {
                 </div>
 
                 {/* FAQ Accordion with refined design */}
-                <div className={`space-y-3 transition-all duration-1000 delay-200 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}>
+                <div className={`space-y-3 transition-all duration-1200 delay-200 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                }`} style={{
+                    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                }}>
                     {faqs.map((faq, index) => (
                         <div
                             key={index}
@@ -130,9 +134,11 @@ function FAQ() {
                 </div>
 
                 {/* CTA */}
-                <div className={`text-center mt-20 pt-16 border-t border-hero-accent/10 transition-all duration-1000 delay-400 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}>
+                <div className={`text-center mt-20 pt-16 border-t border-hero-accent/10 transition-all duration-1200 delay-400 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                }`} style={{
+                    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                }}>
                     <p className="font-['Playfair_Display'] text-xl sm:text-2xl italic text-neutral-800 mb-8">
                         Still have questions? We'd love to hear from you.
                     </p>
