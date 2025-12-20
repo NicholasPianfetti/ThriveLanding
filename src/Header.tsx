@@ -63,7 +63,7 @@ function Header() {
                         } : {}}
                     >
                         <img
-                            src={isScrolled ? "/ThriveSymbolDark.png" : "/ThriveSymbolDark.png"}
+                            src={isScrolled ? "./public/ThriveSymbolDark.png" : "./public/ThriveSymbolDark.png"}
                             alt="Thrive AI Symbol"
                             className={`transition-all duration-300 ${
                                 isScrolled ? 'h-8 brightness-0 invert' : 'h-10'
