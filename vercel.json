@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/app",
-      "destination": "https://main.d1y5ctuu725k2d.amplifyapp.com"
+      "destination": "https://main.d1y5ctuu725k2d.amplifyapp.com/"
     },
     {
       "source": "/app/:path*",
@@ -11,6 +11,14 @@
     {
       "source": "/assets/:path*",
       "destination": "https://main.d1y5ctuu725k2d.amplifyapp.com/assets/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/app/:path*",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache" }
+      ]
     }
   ]
 }
