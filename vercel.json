@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/app",
+      "destination": "https://main.d1y5ctuu725k2d.amplifyapp.com"
+    },
+    {
+      "source": "/app/:path*",
+      "destination": "https://main.d1y5ctuu725k2d.amplifyapp.com/:path*"
+    }
+  ]
+}
