@@ -7,6 +7,10 @@
     {
       "source": "/app/:path*",
       "destination": "https://main.d1y5ctuu725k2d.amplifyapp.com/:path*"
+    },
+    {
+      "source": "/assets/:path*",
+      "destination": "https://main.d1y5ctuu725k2d.amplifyapp.com/assets/:path*"
     }
   ]
 }
