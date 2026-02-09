@@ -11,12 +11,13 @@ declare global {
 function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [hasAnimated, setHasAnimated] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         setTimeout(() => setHasAnimated(true), 100);
 
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 80);
+            setIsScrolled(window.scrollY > 20);
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
@@ -35,112 +36,115 @@ function Header() {
         document.head.appendChild(link);
     }, []);
 
+    const navLinks = [
+        { label: 'About', href: '#about' },
+        { label: 'Process', href: '#how-it-works' },
+        { label: 'FAQ', href: '#faq' },
+    ];
+
     return (
         <header
-            className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
-                isScrolled
-                    ? 'bg-hero-bg-dark/95 backdrop-blur-md border-b border-hero-accent/10'
-                    : 'bg-transparent'
-            } ${
-                hasAnimated ? 'top-0 opacity-100' : '-top-24 opacity-0'
-            }`}
-            style={{
-                transition: 'top 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s, background-color 0.5s, backdrop-filter 0.5s',
-            }}
+            className={`fixed left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+                ? 'bg-white border-b border-border-light shadow-sm'
+                : 'bg-white/80 backdrop-blur-sm border-b border-transparent'
+                } ${hasAnimated ? 'top-0 opacity-100' : '-top-20 opacity-0'
+                }`}
         >
-            <nav className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-                <div className={`flex items-center justify-between transition-all duration-300 ${
-                    isScrolled ? 'h-16' : 'h-20'
-                }`}>
+            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-16">
                     {/* Logo */}
-                    <a
-                        href="#"
-                        className={`flex items-center gap-3 transition-all duration-300 group ${
-                            !isScrolled ? 'bg-white/95 backdrop-blur-sm px-5 py-2.5' : ''
-                        }`}
-                        style={!isScrolled ? {
-                            clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))'
-                        } : {}}
-                    >
+                    <a href="#" className="flex items-center gap-2.5 group">
                         <img
-                            src={isScrolled ? "ThriveSymbolDark.png" : "ThriveSymbolDark.png"}
+                            src="ThriveSymbolDark.png"
                             alt="Thrive AI Symbol"
-                            className={`transition-all duration-300 ${
-                                isScrolled ? 'h-8 brightness-0 invert' : 'h-10'
-                            }`}
+                            className="h-8 transition-transform duration-200 group-hover:scale-105"
                         />
-                        <div className="flex flex-col leading-none gap-0.5">
-                            <span className={`transition-all duration-300 ${
-                                isScrolled ? 'text-[0.95rem] text-hero-accent' : 'text-[1.1rem] text-neutral-900'
-                            }`} style={{
-                                fontFamily: "'Outfit', sans-serif",
-                                fontWeight: 900,
-                                letterSpacing: '-0.02em',
-                                lineHeight: 0.9
-                            }}>
-                                THRIVE AI
-                            </span>
-                        </div>
+                        <span className="text-text-primary font-semibold text-lg tracking-tight">
+                            ThriveAI
+                        </span>
                     </a>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center gap-10">
-                        {[
-                            { label: 'About', href: '#about' },
-                            { label: 'Process', href: '#how-it-works' },
-                            { label: 'FAQ', href: '#faq' },
-                        ].map((link, i) => (
+                    <div className="hidden md:flex items-center gap-8">
+                        {navLinks.map((link) => (
                             <a
                                 key={link.href}
                                 href={link.href}
-                                className={`group relative text-sm font-medium tracking-wide transition-colors duration-300 ${
-                                    isScrolled
-                                        ? 'text-hero-accent/80 hover:text-hero-accent'
-                                        : 'text-hero-text/70 hover:text-hero-text'
-                                }`}
-                                style={{ transitionDelay: `${i * 50}ms` }}
+                                className="text-text-secondary hover:text-text-primary text-sm font-medium transition-colors duration-200"
                             >
                                 {link.label}
-                                <span className={`absolute -bottom-1 left-0 h-px w-0 transition-all duration-300 group-hover:w-full ${
-                                    isScrolled ? 'bg-hero-accent' : 'bg-hero-text'
-                                }`} />
                             </a>
                         ))}
                     </div>
 
-                    {/* CTA Button */}
-                    <a
-                        href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=e8dcc4&primary_color=1a2f23"
-                        className={`group relative inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold overflow-hidden transition-all duration-300 ${
-                            isScrolled
-                                ? 'bg-hero-accent text-hero-bg-dark hover:shadow-lg hover:shadow-hero-accent/20'
-                                : 'bg-hero-accent text-hero-bg-dark hover:bg-hero-accent-dark hover:shadow-xl hover:shadow-hero-accent/30'
-                        }`}
-                        style={{
-                            clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))'
-                        }}
-                    >
-                        <span className="relative z-10">
-                            <span className="hidden sm:inline">Book a Demo</span>
-                            <span className="sm:hidden">Demo</span>
-                        </span>
-                        <svg
-                            className="w-3.5 h-3.5 relative z-10 transition-transform duration-300 group-hover:translate-x-0.5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+                    {/* CTA Buttons */}
+                    <div className="flex items-center gap-3">
+                        <a
+                            href="https://app.thrive-ai.co"
+                            className="hidden sm:inline-flex items-center text-text-secondary hover:text-text-primary text-sm font-medium transition-colors"
                         >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                        </svg>
-                        <div className="absolute inset-0 bg-hero-accent-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </a>
-                </div>
-            </nav>
+                            Login
+                        </a>
+                        <a
+                            href="https://calendly.com/thrive-ai-info/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                            className="hidden sm:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:shadow-md"
+                        >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                            </svg>
+                            Book a Demo
+                        </a>
 
-            {/* Decorative bottom border gradient (only when scrolled) */}
-            {isScrolled && (
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-hero-accent/20 to-transparent" />
-            )}
+                        {/* Mobile menu button */}
+                        <button
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            className="md:hidden p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-gray-100 transition-colors"
+                        >
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                {isMobileMenuOpen ? (
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                ) : (
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                )}
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                {/* Mobile Navigation */}
+                {isMobileMenuOpen && (
+                    <div className="md:hidden py-4 border-t border-border-light">
+                        <div className="flex flex-col gap-2">
+                            {navLinks.map((link) => (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="text-text-secondary hover:text-text-primary hover:bg-gray-50 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+                                >
+                                    {link.label}
+                                </a>
+                            ))}
+                            <a
+                                href="https://app.thrive-ai.co"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="text-text-secondary hover:text-text-primary hover:bg-gray-50 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+                            >
+                                Login to App
+                            </a>
+                            <a
+                                href="https://calendly.com/thrive-ai-info/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                                className="flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-4 py-2.5 rounded-lg text-sm font-medium mt-2 transition-colors"
+                            >
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                </svg>
+                                Book a Demo
+                            </a>
+                        </div>
+                    </div>
+                )}
+            </nav>
         </header>
     );
 }

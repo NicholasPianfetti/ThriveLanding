@@ -1,201 +1,159 @@
-import { useState, useEffect, useRef } from 'react';
-import Squares from './components/Squares';
+import { useState, useEffect } from 'react';
 
 function Hero() {
     const [hasAnimated, setHasAnimated] = useState(false);
-    const [scrollY, setScrollY] = useState(0);
-    const heroRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        setTimeout(() => setHasAnimated(true), 300);
-
-        const handleScroll = () => {
-            setScrollY(window.scrollY);
-        };
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
+        setTimeout(() => setHasAnimated(true), 200);
     }, []);
 
-    const parallaxOffset = scrollY * 0.5;
-
     return (
-        <section
-            ref={heroRef}
-            className="relative min-h-screen flex items-center overflow-hidden"
-            style={{
-                background: `
-                    radial-gradient(ellipse 80% 60% at 30% 40%, rgba(33, 150, 243, 0.15), transparent),
-                    radial-gradient(circle at 80% 20%, rgba(33, 150, 243, 0.1), transparent),
-                    linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)
-                `
-            }}
-        >
-            {/* Animated mesh gradient overlay */}
-            <div className="absolute inset-0 opacity-40">
-                <div
-                    className="absolute inset-0 animate-pulse-slow"
-                    style={{
-                        background: `
-                            radial-gradient(circle at 20% 80%, rgba(33, 150, 243, 0.2) 0%, transparent 50%),
-                            radial-gradient(circle at 80% 20%, rgba(25, 118, 210, 0.3) 0%, transparent 50%)
-                        `,
-                        animationDuration: '8s'
-                    }}
-                />
-            </div>
-
-            {/* Moving squares with parallax */}
+        <section className="relative min-h-screen flex items-center bg-app-bg pt-16">
+            {/* Subtle gradient background */}
             <div
-                className="absolute inset-0 opacity-15"
-                style={{ transform: `translateY(${parallaxOffset}px)` }}
-            >
-                <Squares
-                    direction="diagonal"
-                    speed={0.3}
-                    borderColor="#2196f3"
-                    squareSize={100}
-                    hoverFillColor="rgba(33, 150, 243, 0.08)"
-                />
-            </div>
-
-            {/* Gradient vignette */}
-            <div className="absolute inset-0 bg-gradient-to-t from-hero-bg-dark via-transparent to-transparent pointer-events-none opacity-60" />
-            <div className="absolute inset-0 bg-gradient-to-r from-hero-bg-dark/30 via-transparent to-transparent pointer-events-none" />
-
-            {/* Decorative accent line */}
-            <div
-                className={`absolute left-0 top-1/3 w-1 bg-gradient-to-b from-transparent via-hero-accent to-transparent transition-all duration-1500 delay-1000 ${
-                    hasAnimated ? 'h-64 opacity-100' : 'h-0 opacity-0'
-                }`}
-                style={{ transform: `translateY(${-parallaxOffset * 0.3}px)` }}
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                    background: `
+                        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.08), transparent),
+                        linear-gradient(to bottom, #F8FAFC, #FFFFFF)
+                    `
+                }}
             />
 
-            <div className="relative w-full px-6 sm:px-8 lg:px-12 py-20 sm:py-24 lg:py-32">
-                <div className="max-w-7xl mx-auto">
-                    {/* Eyebrow text */}
-                    <div
-                        className={`inline-block mb-6 transition-all duration-1000 ${
-                            hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                        }`}
-                        style={{
-                            transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
-                        }}
-                    >
-                        <span className="text-hero-accent text-sm sm:text-base tracking-[0.3em] uppercase font-medium">
-                            Enterprise AI Solutions
-                        </span>
-                        <div className="h-px bg-gradient-to-r from-hero-accent to-transparent mt-2" />
-                    </div>
+            <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    {/* Left Column - Content */}
+                    <div className={`transition-all duration-700 ${hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                        }`}>
+                        {/* Headline */}
+                        <h1 className="mb-6">
+                            <span className="block text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-tight">
+                                Custom AI
+                            </span>
+                            <span className="block text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-600 leading-tight">
+                                Automation
+                            </span>
+                            <span className="block text-xl sm:text-2xl text-text-secondary font-medium mt-4">
+                                Scale Without Hiring
+                            </span>
+                        </h1>
 
-                    {/* Main headline with editorial typography */}
-                    <h1 className="mb-8 sm:mb-12">
-                        <span
-                            className={`block font-['Playfair_Display'] font-bold text-hero-text leading-[0.95] tracking-tight transition-all duration-1400 delay-100 ${
-                                hasAnimated ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-[0.98]'
-                            }`}
-                            style={{
-                                fontSize: 'clamp(2.5rem, 8vw, 7rem)',
-                                textShadow: '0 4px 20px rgba(0,0,0,0.3)',
-                                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
-                            }}
-                        >
-                            Custom AI
-                        </span>
-                        <span
-                            className={`block font-['Playfair_Display'] font-bold leading-[0.95] tracking-tight mt-1 sm:mt-2 bg-gradient-to-r from-hero-accent via-hero-accent-dark to-hero-accent bg-clip-text text-transparent transition-all duration-1400 delay-300 ${
-                                hasAnimated ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-[0.98]'
-                            }`}
-                            style={{
-                                fontSize: 'clamp(2.5rem, 8vw, 7rem)',
-                                filter: 'drop-shadow(0 2px 12px rgba(232, 220, 196, 0.3))',
-                                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
-                            }}
-                        >
-                            Automation
-                        </span>
-                        <span
-                            className={`block font-['Playfair_Display'] italic font-light text-hero-text/90 leading-[0.95] tracking-tight mt-1 sm:mt-2 transition-all duration-1400 delay-500 ${
-                                hasAnimated ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-[0.98]'
-                            }`}
-                            style={{
-                                fontSize: 'clamp(1.75rem, 5vw, 4.5rem)',
-                                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
-                            }}
-                        >
-                            Scale Without Hiring
-                        </span>
-                    </h1>
-
-                    {/* Subheadline with refined typography */}
-                    <div className="max-w-2xl">
-                        <p
-                            className={`text-base sm:text-lg lg:text-xl text-hero-text-muted/90 leading-relaxed font-light mb-10 sm:mb-14 transition-all duration-1200 delay-700 ${
-                                hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                            }`}
-                            style={{
-                                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
-                            }}
-                        >
+                        {/* Description */}
+                        <p className="text-lg text-text-secondary leading-relaxed mb-8 max-w-xl">
                             We develop tailored AI solutions that streamline your operations,
                             eliminate repetitive tasks, and accelerate growth.
                         </p>
 
-                        {/* CTA with sophisticated styling */}
-                        <div
-                            className={`flex flex-col sm:flex-row gap-4 items-start transition-all duration-1200 delay-900 ${
-                                hasAnimated ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-[0.98]'
-                            }`}
-                            style={{
-                                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)'
-                            }}
-                        >
+                        {/* CTA Buttons */}
+                        <div className="flex flex-col sm:flex-row gap-4">
                             <a
-                                href="https://calendly.com/nickpisme4/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0a0a0a&primary_color=2196f3"
-                                className="group relative inline-flex items-center gap-3 bg-hero-accent text-white px-8 sm:px-10 py-4 sm:py-5 rounded-none text-base sm:text-lg font-semibold overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-hero-accent/30"
-                                style={{
-                                    clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))'
-                                }}
+                                href="https://calendly.com/thrive-ai-info/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                                className="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-lg text-base font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-brand-600/25"
                             >
-                                <span className="relative z-10">Book a Demo</span>
-                                <svg
-                                    className="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                                 </svg>
-                                <div className="absolute inset-0 bg-gradient-to-r from-hero-accent-dark to-hero-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                Book a Demo
+                            </a>
+                            <a
+                                href="#about"
+                                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-text-primary px-6 py-3 rounded-lg text-base font-semibold border border-border-light transition-all duration-200"
+                            >
+                                Learn More
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
                             </a>
                         </div>
                     </div>
 
-                    {/* Decorative floating element */}
-                    <div
-                        className={`absolute right-8 sm:right-16 top-1/2 -translate-y-1/2 hidden lg:block transition-all duration-1500 delay-1200 ${
-                            hasAnimated ? 'opacity-30 scale-100' : 'opacity-0 scale-90'
-                        }`}
-                        style={{ transform: `translateY(calc(-50% + ${-parallaxOffset * 0.2}px))` }}
-                    >
-                        <div className="relative w-64 h-64">
-                            <div className="absolute inset-0 border border-hero-accent/30 rotate-45" />
-                            <div className="absolute inset-8 border border-hero-accent/20 rotate-45" />
-                            <div className="absolute inset-16 border border-hero-accent/40 rotate-45" />
+                    {/* Right Column - Dashboard Preview */}
+                    <div className={`transition-all duration-700 delay-200 ${hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                        }`}>
+                        {/* Mock Dashboard Card */}
+                        <div className="bg-white rounded-2xl shadow-card-hover border border-border-light p-6 lg:p-8">
+                            {/* Dashboard Header */}
+                            <div className="flex items-center justify-between mb-6">
+                                <div>
+                                    <h3 className="text-xl font-semibold text-text-primary">Dashboard</h3>
+                                    <p className="text-sm text-text-muted">Overview of your campaign performance.</p>
+                                </div>
+                                <button className="inline-flex items-center gap-2 bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                    </svg>
+                                    New Campaign
+                                </button>
+                            </div>
+
+                            {/* Stats Grid */}
+                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                                {[
+                                    {
+                                        label: 'Total Leads', value: '2,847', icon: (
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                            </svg>
+                                        )
+                                    },
+                                    {
+                                        label: 'Emails Sent', value: '12,492', icon: (
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            </svg>
+                                        )
+                                    },
+                                    {
+                                        label: 'Active Campaigns', value: '8', icon: (
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                            </svg>
+                                        )
+                                    },
+                                    {
+                                        label: 'Conversion Rate', value: '24%', icon: (
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                            </svg>
+                                        )
+                                    },
+                                ].map((stat, i) => (
+                                    <div key={i} className="bg-app-bg rounded-xl p-4 border border-border-light">
+                                        <div className="text-text-muted mb-2">{stat.icon}</div>
+                                        <div className="text-2xl font-bold text-text-primary">{stat.value}</div>
+                                        <div className="text-xs text-text-muted">{stat.label}</div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Campaign List Preview */}
+                            <div className="bg-app-bg rounded-xl border border-border-light overflow-hidden">
+                                <div className="px-4 py-3 border-b border-border-light">
+                                    <h4 className="font-semibold text-text-primary text-sm">All Campaigns</h4>
+                                </div>
+                                <div className="divide-y divide-border-light">
+                                    {[
+                                        { name: 'Q1 Outreach', status: 'active', leads: 847 },
+                                        { name: 'Enterprise Leads', status: 'active', leads: 423 },
+                                        { name: 'Startup Program', status: 'paused', leads: 156 },
+                                    ].map((campaign, i) => (
+                                        <div key={i} className="flex items-center justify-between px-4 py-3">
+                                            <div className="flex items-center gap-3">
+                                                <span className="font-medium text-text-primary text-sm">{campaign.name}</span>
+                                                <span className={`px-2 py-0.5 rounded text-xs font-medium ${campaign.status === 'active'
+                                                    ? 'bg-green-100 text-green-700'
+                                                    : 'bg-yellow-100 text-yellow-700'
+                                                    }`}>
+                                                    {campaign.status}
+                                                </span>
+                                            </div>
+                                            <span className="text-sm text-text-secondary">{campaign.leads} leads</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            {/* Scroll indicator */}
-            <div
-                className={`absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-1000 delay-1400 ${
-                    hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
-            >
-                <div className="flex flex-col items-center gap-2 animate-bounce-slow">
-                    <span className="text-hero-accent/60 text-xs tracking-widest uppercase">Scroll</span>
-                    <div className="w-px h-12 bg-gradient-to-b from-hero-accent/60 to-transparent" />
                 </div>
             </div>
         </section>

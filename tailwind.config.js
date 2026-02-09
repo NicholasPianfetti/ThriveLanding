@@ -6,45 +6,47 @@ export default {
   ],
   theme: {
   	extend: {
-  		animation: {
-  			'bounce-slow': 'bounce 3s infinite',
-  			'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+  		fontFamily: {
+  			sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
   		},
   		colors: {
-  			// Main brand colors - vibrant blue from logo
+  			// Application background colors
+  			app: {
+  				'bg': '#F8FAFC',
+  				'surface': '#FFFFFF',
+  			},
+  			// Brand colors matching the dashboard
   			brand: {
-  				'50': '#e3f2fd',
-  				'100': '#bbdefb',
-  				'200': '#90caf9',
-  				'300': '#64b5f6',
-  				'400': '#42a5f5',
-  				'500': '#2196f3',
-  				'600': '#1e88e5',
-  				'700': '#1976d2',
-  				'800': '#1565c0',
-  				'900': '#0d47a1'
+  				'50': '#EFF6FF',
+  				'100': '#DBEAFE',
+  				'200': '#BFDBFE',
+  				'300': '#93C5FD',
+  				'400': '#60A5FA',
+  				'500': '#3B82F6',
+  				'600': '#2563EB',
+  				'700': '#1D4ED8',
+  				'800': '#1E40AF',
+  				'900': '#1E3A8A',
   			},
-  			// Hero section colors - blue, black, white
-  			hero: {
-  				'bg-dark': '#0a0a0a',      // Deep black background
-  				'bg-light': '#1a1a1a',     // Lighter black (for gradients)
-  				'accent': '#2196f3',       // Vibrant blue accent
-  				'accent-dark': '#1976d2',  // Darker blue (for hover states)
-  				'text': '#ffffff',         // Pure white text
-  				'text-muted': '#a0a0a0',   // Muted gray text
+  			// Status colors
+  			status: {
+  				'success': '#22C55E',
+  				'warning': '#F59E0B',
+  				'error': '#EF4444',
+  				'info': '#3B82F6',
   			},
-  			neutral: {
-  				'50': '#fafafa',
-  				'100': '#f5f5f5',
-  				'200': '#e5e5e5',
-  				'300': '#d4d4d4',
-  				'400': '#a3a3a3',
-  				'500': '#737373',
-  				'600': '#525252',
-  				'700': '#404040',
-  				'800': '#262626',
-  				'900': '#171717'
+  			// Text colors
+  			text: {
+  				'primary': '#1E293B',
+  				'secondary': '#64748B',
+  				'muted': '#94A3B8',
   			},
+  			// Border colors
+  			border: {
+  				'light': '#E2E8F0',
+  				'DEFAULT': '#CBD5E1',
+  			},
+  			// Semantic aliases for easier usage
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -75,24 +77,19 @@ export default {
   				DEFAULT: 'hsl(var(--destructive))',
   				foreground: 'hsl(var(--destructive-foreground))'
   			},
-  			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
-  			chart: {
-  				'1': 'hsl(var(--chart-1))',
-  				'2': 'hsl(var(--chart-2))',
-  				'3': 'hsl(var(--chart-3))',
-  				'4': 'hsl(var(--chart-4))',
-  				'5': 'hsl(var(--chart-5))'
-  			}
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		boxShadow: {
+  			'card': '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+  			'card-hover': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
   		}
   	}
   },
   plugins: [require("tailwindcss-animate")],
 }
-
